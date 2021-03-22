@@ -1,0 +1,101 @@
+from books_authors.models import *
+
+ Book.objects.create(title = "Harry Potter and the Sorcerer's Stone")
+
+ Book.objects.create(title = "The Brothers Karamazov")
+
+ Book.objects.create(title = "I love Capitalism")
+
+Book.objects.create(title = "The Pillars of the Earth")
+
+Book.objects.create(title = "A Game of Thrones")
+
+Author.objects.create(name = "J.K. Rowling")
+<Author: Author object (2)>
+
+Author.objects.create(name = "Fyodor Dostoevsky")
+<Author: Author object (3)
+
+Author.objects.create(name = "Ken Langone")
+<Author: Author object (4)>
+
+Author.objects.create(name = "Ken Follett")
+<Author: Author object (5)>
+
+Author.objects.create(name = "George. R. R. Martin")
+<Author: Author object (6)>
+
+c = Book.objects.get(id=1)
+>>> c.title = " C # "
+>>> c.save()
+
+>>> this_book = Book.objects.get(id=1)
+>>> this_author = Author.objects.get(id=1)
+this_author.books.add(this_book)
+
+this_book2 = Book.objects.get(id=2)
+this_author2 = Author.objects.get(id=1)
+>>> this_author2.books.add(this_book2)
+
+this_book = Book.objects.get(id=1)
+>>> this_author3 = Author.objects.get(id=2)
+>>> this_author3.books.add(this_book)
+
+ this_book2 = Book.objects.get(id=2)
+>>> this_author3 = Author.objects.get(id=2)
+>>> this_author3.books.add(this_book2)
+
+this_book3 = Book.objects.get(id=3)
+>>> this_author3 = Author.objects.get(id=2)
+this_author3.books.add(this_book3)
+
+this_book = Book.objects.get(id=1)
+this_author4 = Author.objects.get(id=3)
+this_author4.books.add(this_book)
+
+this_book2 = Book.objects.get(id=2)
+>>> this_author4 = Author.objects.get(id=3)
+>>> this_author4.books.add(this_book2)
+
+this_book3 = Book.objects.get(id=3)
+>>> this_author4 = Author.objects.get(id=3)
+>>> this_author4.books.add(this_book3)
+
+ this_book4 = Book.objects.get(id=4)
+>>> this_author4 = Author.objects.get(id=3)
+>>> this_author4.books.add(this_book4)
+
+this_book = Book.objects.get(id=1)
+>>> this_author5 = Author.objects.get(id=4)
+this_author5.books.add(this_book)
+
+ this_book2 = Book.objects.get(id=2)
+>>> this_author5 = Author.objects.get(id=4)
+>>> this_author5.books.add(this_book2)
+
+this_book3 = Book.objects.get(id=3)
+>>> this_author5 = Author.objects.get(id=4)
+>>> this_author5.books.add(this_book3)
+
+ this_book4 = Book.objects.get(id=4)
+>>> this_author5 = Author.objects.get(id=4)
+>>> this_author5.books.add(this_book4)
+
+this_book5 = Book.objects.get(id=5)
+>>> this_author5 = Author.objects.get(id=4)
+>>> this_author5.books.add(this_book5)
+
+this_book3.authors.all()
+<QuerySet [<Author: Author object (2)>, <Author: Author object (3)>, <Author: Author object (4)>]>
+
+this_book3 = Book.objects.get(id=3)
+>>> this_book3.authors.remove(this_author)
+
+ this_book2 = Book.objects.get(id=2)
+ this_book2.authors.add(this_author5)
+
+ this_author3.books.all()
+<QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>]>
+
+this_author5.books.all()
+<QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>, <Book: Book object (5)>]>
